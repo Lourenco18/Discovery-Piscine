@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form>
+        <input type="number"  name="firstNumber" id="firstNumber" required placeholder="First Number">
+        <select name="operation" id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="percentage">%</option>
+        </select>
+        <input type="number" name="secondNumber" id="secondNumber" required placeholder="Second Number">
+        <button type="submit">Try Me!</button>
+    </form>
+
+<script>
+var form = document.querySelector('form');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    var firstNumber = Number(document.getElementById('firstNumber').value);
+    var secondNumber = Number(document.getElementById('secondNumber').value);
+    var operation = document.getElementById('operation').value;
+    var result;
+
+    // Verificação de números negativos
+    if(firstNumber < 0 || secondNumber < 0){
+        alert("Error :(");
+        return;
+    }
+
+    // Divisão ou porcentagem por zero
+    if((operation == "divide" || operation == "percentage") && secondNumber === 0){
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
+        return;
+    }
+
+    // Cálculos
+    switch(operation){
+        case "add":
+            result = firstNumber + secondNumber;
+            break;
+        case "subtract":
+            result = firstNumber - secondNumber;
+            break;
+        case "multiply":
+            result = firstNumber * secondNumber;
+            break;
+        case "divide":
+            result = firstNumber / secondNumber;
+            break;
+        case "percentage":
+            result = (firstNumber / 100) * secondNumber;
+            break;
+    }
+
+    alert("Result: " + result);
+    console.log(result);
+});
+
+// Alerta a cada 30 segundos
+function mostrarAlerta() {
+    alert("Please, use me...");
+}
+
+setInterval(mostrarAlerta, 30000);
+
+</script>
+</body>
+</html>
