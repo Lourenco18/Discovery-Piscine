@@ -1,0 +1,49 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Parallax section */
+.parallax {
+    height: 100vh; 
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* First image */
+.parallax1 {
+    background-image: url('carro.webp');
+}
+
+/* Second image */
+.parallax2 {
+    background-image: url('carro2.webp');
+}
+
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+
+.black-block {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 2rem;
+    
+}
