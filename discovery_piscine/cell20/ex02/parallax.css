@@ -10,9 +10,8 @@
     height: 100vh; 
     background-attachment: fixed; 
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+ position: relative;
 }
 
 /* First image */
@@ -33,7 +32,6 @@
     transform: translate(-50%, -50%);
     color: white;
     font-size: 3rem;
-    
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     text-align: center;
 }
