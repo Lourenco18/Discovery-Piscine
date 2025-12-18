@@ -1558,14 +1558,17 @@ input, select, textarea {
 
 /* Base size for skill icons as images */
 .features .icon.image img {
-	width: 180px;
-	height: auto;
+	width: 180px !important;
+	height: auto !important;
+	display: block;
+	margin: 0 auto;
 }
 
 /* Downscale on tablets */
 @media screen and (max-width: 980px) {
 	.features .icon.image img {
 		width: 140px !important;
+		height: auto !important;
 	}
 }
 
@@ -1573,6 +1576,7 @@ input, select, textarea {
 @media screen and (max-width: 736px) {
 	.features .icon.image img {
 		width: 110px !important;
+		height: auto !important;
 	}
 }
 
@@ -1580,6 +1584,7 @@ input, select, textarea {
 @media screen and (max-width: 480px) {
 	.features .icon.image img {
 		width: 90px !important;
+		height: auto !important;
 	}
 }
 
