@@ -42,13 +42,11 @@
           let operation = $("#operation").val();
           let result;
 
-          // Números negativos
           if (firstNumber < 0 || secondNumber < 0) {
             alert("Error :(");
             return;
           }
 
-          // Divisão ou percentagem por zero
           if (
             (operation === "divide" || operation === "percentage") &&
             secondNumber === 0

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex01bis</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      #balloon {
+        width: 200px;
+        height: 200px;
+        background: red;
+        border-radius: 50%;
+        margin: 100px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="balloon"></div>
+
+    <script>
+      const colors = ["red", "green", "blue"];
+      let colorIndex = 0;
+
+      $("#balloon").on("click", function () {
+        let size = $(this).width() + 10;
+
+        if (size > 420) {
+          size = 200;
+        }
+
+        $(this)
+          .stop(true)
+          .css("background", colors[++colorIndex % colors.length])
+          .animate(
+            {
+              width: size,
+              height: size,
+            },
+            200
+          );
+      });
+
+      $("#balloon").on("mouseleave", function () {
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+
+        $(this).stop(true).css("background", colors[colorIndex]).animate(
+          {
+            width: 200,
+            height: 200,
+          },
+          400
+        );
+      });
+    </script>
+  </body>
+</html>
