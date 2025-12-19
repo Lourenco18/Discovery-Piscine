@@ -1,269 +1,268 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <title>Rush</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Portfolios</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("background.jpg") center/cover no-repeat fixed;
+      }
+
+      .container-main {
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      header {
+        text-align: center;
+        color: white;
+        margin-bottom: 60px;
+        animation: fadeInDown 0.8s ease;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+        letter-spacing: -1px;
+      }
+
+      header p {
+        font-size: 1.4rem;
+        opacity: 0.95;
+        font-weight: 300;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .portfolio-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: flex;
+        flex-direction: column;
+        animation: slideUp 0.8s ease backwards;
+      }
+
+      .portfolio-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .portfolio-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .portfolio-card:nth-child(2) .card-header {
+        background: linear-gradient(135deg, #6bcb77 0%, #4d96ff 100%);
+      }
+
+      .card-header h2 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-body {
+        padding: 35px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+      }
+
+      .card-description {
+        margin-bottom: 25px;
+      }
+
+      .card-description p {
+        line-height: 1.7;
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 300;
+      }
+
+      .card-footer {
+        display: flex;
+        gap: 15px;
+        margin-top: auto;
+      }
+
+      .btn-portfolio {
+        flex: 1;
+        padding: 14px 28px;
+        text-align: center;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn-primary-custom {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
+        color: white;
+      }
+
+      .portfolio-card:nth-child(2) .btn-primary-custom {
+        background: linear-gradient(135deg, #6bcb77 0%, #4d96ff 100%);
+      }
+
+      .btn-primary-custom:hover {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.8rem;
+        }
+
+        header p {
+          font-size: 1.1rem;
+        }
+
+        .cards-container {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .card-header h2 {
+          font-size: 2.2rem;
+        }
+
+        .card-header {
+          padding: 35px 15px;
+        }
+
+        .card-body {
+          padding: 25px;
+        }
+      }
+
+      footer {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 300;
+      }
+    </style>
   </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="head" class="alt">
-        <span class="image"><img style="height: 100px; width: 100px" src="images/42Logo.jpg" alt="" /></span>
-        <h1>Daniel and Lourenço</h1>
-        <p>
-   
-            <div class="content">
-              <header class="major">
-                
-                <h3>Web Developers</h3>
-              </header>
-              <p>
-                This website was created within the scope of Discovery Piscine's
-                Rush project. The aim is to create a website using a template
-                with the following requirements:<br />
-                A navigation bar: You must implement your own navigation bar
-                (with several links to move around your page easily). This bar
-                must point to at least 3 parts of your summary. Finally this bar
-                must remain fixed during your navigation on the page.<br />
-                •Three parts: You must implement 3 parts in your summary.<br />
-                •A first part : which will display simple content with a photo,
-                a name and job title.<br />
-                •A second part : which will display the professional experiences
-                and skills of the person.<br />
-                •A last part: with links to contact the person.
-              </p>
-            </div>
-            
-           <ul class="actions special">
-              <li>
-                   <a href="#cv1" class="btn">Daniel CV</a>
-        
-              </li>
-              <li>
-                  <a href="#cv2" class="btn">Lourenço CV</a>
-              </li>
-            </ul>
-        </p>
+  <body>
+    <div class="container-main">
+      <header>
+        <h1>Portfolios</h1>
       </header>
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul>
-          <li><a href="#head" class="active">Introduction</a></li>
-          <li><a href="#first">Skills</a></li>
-          <li><a href="#cta">Contact info</a></li>
-        </ul>
-      </nav>
-
-      <!-- Main -->
-      <div id="main">
-     
-
-        <!-- First Section -->
-        <section id="first" class="main special">
-          <header class="major">
-            <h2>Daniel Skills</h2>
-          </header>
-          <ul class="features">
-            <li>
-              <span class="icon image"
-                ><img
-                  style="height: 200px; width: 200px"
-                  src="images/icon/html.png"
-                  alt="HTML5"
-              /></span>
-              <h3>HTML</h3>
-              <p>
-                Proficient in HTML5 to build semantic, responsive layouts,
-                following accessibility best practices.
-              </p>
-              <a href="https://github.com/Lourenco18/Discovery-Piscine"
-                >Discovery Piscine</a
+      <div class="cards-container">
+        <!-- Daniel Card -->
+        <div class="portfolio-card">
+          <div class="card-header">
+            <h2>Daniel</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-description"></div>
+            <div class="card-footer">
+              <a
+                href="daniel/index.html"
+                class="btn-portfolio btn-primary-custom"
+                >View CV</a
               >
-            </li>
+            </div>
+          </div>
+        </div>
 
-            <li>
-              <span class="icon image"
-                ><img
-                  style="height: 200px; width: 200px"
-                  src="images/icon/js.png"
-                  alt="JavaScript"
-              /></span>
-              <h3>JavaScript</h3>
-              <p>
-                Development of interactive browser features, DOM and event
-                handling; example: Training Timer.
-              </p>
-              <a href="https://github.com/Lourenco18/Training-Timer"
-                >Training Timer</a
+        <!-- Lourenço Card -->
+        <div class="portfolio-card">
+          <div class="card-header">
+            <h2>Lourenço</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-description"></div>
+            <div class="card-footer">
+              <a
+                href="lourenco/index.html"
+                class="btn-portfolio btn-primary-custom"
+                >View CV</a
               >
-            </li>
-
-            <li>
-              <span class="icon image"
-                ><img
-                  style="height: 200px; width: 200px"
-                  src="images/icon/c.png"
-                  alt="c"
-              /></span>
-              <h3>C</h3>
-              <p>
-                C programming focused on algorithms, pointers, and memory
-                management; solid experience from the 42 Piscine.
-              </p>
-              <a href="https://github.com/Lourenco18/42-Piscine">42 Piscine</a>
-            </li>
-
-            <li>
-              <span class="icon image"
-                ><img
-                  style="height: 200px; width: 200px"
-                  src="images/icon/react.png"
-                  alt="React and TypeScript"
-              /></span>
-              <h3>React & TypeScript</h3>
-              <p>
-                Builds modular interfaces in React with state and static typing
-                (TypeScript), promoting scalability and maintainability.
-              </p>
-              <a href="https://github.com/Lourenco18/flowboard">Flowboard</a>
-            </li>
-
-            <li>
-              <span class="icon image"
-                ><img
-                  style="height: 200px; width: 200px"
-                  src="images/icon/phpSQL.png"
-                  alt="PHP and SQL"
-              /></span>
-              <h3>SQL & PHP</h3>
-              <p>
-                Data modeling and building web apps with PHP and MySQL (CRUD,
-                authentication, integrations); projects Mestre Educativo and
-                Stock Manager.
-              </p>
-              <a href="https://github.com/Lourenco18/mestre-educativo"
-                >Mestre Educativo</a
-              ><br />
-              <a href="https://github.com/Lourenco18/gestor-stock"
-                >Stock Manager</a
-              >
-            </li>
-          </ul>
-        </section>
-
-  
-
-        <!-- Get Started -->
-        <section id="cv1" class="main special">
-          <header class="major">
-            <h2>Daniel CV</h2>
-           
-          </header>
-          <footer class="major">
-            <ul class="actions special">
-              <li>
-                <a href="files/danielCV.pdf" class="button" download>
-                   CV
-                </a>
-              </li>
-            
-            </ul>
-          </footer>
-        </section>
-
-           <section id="cv2" class="main special">
-          <header class="major">
-            <h2>Lourenço CV</h2>
-            
-          </header>
-          <footer class="major">
-            <ul class="actions special">
-              <li>
-                <a href="files/lourencoCV.pdf" class="button" download>  CV </a>
-              </li>
-            </ul>
-          </footer>
-        </section>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <section>
-          <h2>Daniel</h2>
-          <dl class="alt">
-            <dt>Phone</dt>
-            <dd>(351) 912 360 972</dd>
-            <dt>Email</dt>
-            <dd>
-              <a href="mailto:contact.lourenco18@gmail.com"
-                >contact.lourenco18@gmail.com</a
-              >
-            </dd>
-          </dl>
-          <ul class="icons">
-            <li>
-              <a
-                href="https://github.com/Lourenco18"
-                class="icon brands fa-github alt"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/daniel-louren%C3%A7o-1299a4386?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                class="icon brands fa-linkedin alt"
-                ><span class="label">LinkedIn</span></a
-              >
-            </li>
-          </ul>
-        </section>
-
-        <section id="cta">
-          <h2>Lourenço</h2>
-          <dl class="alt">
-            <dt>Phone</dt>
-            <dd>(351)</dd>
-            <dt>Email</dt>
-            <dd>
-              <a href="mailto:contact.lourenco18@gmail.com"
-                >contact.lourenco18@gmail.com</a
-              >
-            </dd>
-          </dl>
-          <ul class="icons">
-            <li>
-              <a href="" class="icon brands fa-github alt"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a href="" class="icon brands fa-linkedin alt"
-                ><span class="label">LinkedIn</span></a
-              >
-            </li>
-          </ul>
-        </section>
-      </footer>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

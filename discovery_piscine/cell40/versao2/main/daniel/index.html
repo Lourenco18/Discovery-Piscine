@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel - Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#about">Daniel</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">Intro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section 1: About (Hero) -->
+    <section id="about">
+      <div class="hero-content">
+        <div class="profile-img">
+          <img
+            src="logo.jpeg"
+            style="border-radius: 50%; height: 150px; width: 150px"
+            alt="Profile Image"
+          />
+        </div>
+        <h1>Daniel</h1>
+        <p class="job-title">Full-Stack Web Developer</p>
+        <p style="font-size: 1.1rem; opacity: 0.95">
+          Experienced web developer specializing in modern web technologies,
+          frontend development, and full-stack solutions. Passionate about
+          creating intuitive and performant applications.
+        </p>
+        <a href="danielCV.pdf" download class="cv-download-btn">
+          <i class="fas fa-download"></i>
+          Download CV (PDF)
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 2: Skills & Experience -->
+    <section id="skills">
+      <div class="container-section">
+        <h2>Skills & Experience</h2>
+
+        <div class="skill-card">
+          <h3>HTML5 & Semantic Web</h3>
+          <p>
+            Proficient in HTML5 to build semantic, responsive layouts, following
+            accessibility best practices. Created projects using proper semantic
+            HTML and WAI-ARIA standards.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">Semantic Markup</span>
+            <span class="skill-tag">Accessibility</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>JavaScript & DOM Manipulation</h3>
+          <p>
+            Development of interactive browser features, DOM manipulation, and
+            event handling. Projects include the Training Timer with complex
+            state management.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript ES6+</span>
+            <span class="skill-tag">DOM API</span>
+            <span class="skill-tag">Event Handling</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>C Programming</h3>
+          <p>
+            Strong fundamentals in C programming focused on algorithms,
+            pointers, and memory management. Solid experience from the 42
+            Piscine program with multiple projects.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Algorithms</span>
+            <span class="skill-tag">Memory Management</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>React & TypeScript</h3>
+          <p>
+            Builds modular interfaces in React with state management and static
+            typing using TypeScript. Expertise in component-based architecture
+            and promoting scalability and maintainability.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">State Management</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>SQL & PHP</h3>
+          <p>
+            Data modeling and building web applications with PHP and MySQL.
+            Experience with CRUD operations, authentication systems, and API
+            integrations. Projects: Mestre Educativo and Stock Manager.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Database Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section id="contact">
+      <div class="container-section">
+        <h2>Get In Touch</h2>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>(351) 912 360 972</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>
+              <a
+                href="mailto:contact.lourenco18@gmail.com"
+                style="color: var(--primary); text-decoration: none"
+                >contact.lourenco18@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Portugal</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/Lourenco18"
+            class="social-link"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/daniel-louren%C3%A7o-1299a4386"
+            class="social-link"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
